@@ -1,12 +1,12 @@
 // Your code goes here
 const topNav = document.querySelectorAll('.nav a');
 //1
-topNav[0].addEventListener('click', event => {
+topNav[0].addEventListener('keyup', event => {
     alert('Why do you want to go home? Don\'t you want to have fun on the Fun Bus?!')
     event.stopPropagation()
 });
 //2
-topNav[1].addEventListener('mouseover', event => {
+topNav[1].addEventListener('keypress', event => {
     console.log(event)
     event.stopPropagation()
 });
