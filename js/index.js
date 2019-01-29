@@ -1,1 +1,47 @@
 // Your code goes here
+const topNav = document.querySelectorAll('.nav a');
+//1
+topNav[0].addEventListener('click', event => {
+    console.log(event)
+    event.stopPropagation()
+});
+//2
+topNav[1].addEventListener('mouseover', event => {
+    console.log(event)
+    event.stopPropagation()
+});
+//3
+topNav[2].addEventListener('keydown', event => {
+    console.log(event)
+    event.stopPropagation()
+});
+//4
+topNav[3].addEventListener('scroll', event => {
+    console.log(event)
+    event.stopPropagation()
+});
+//5
+const container = document.querySelector('.container');
+container.addEventListener("pointerdown", event => {
+    console.log(event)
+    event.stopPropagation()
+})
+//6
+container.addEventListener("pointerup", event => {
+    console.log(event)
+    event.stopPropagation()
+})
+//7
+//changes button color to random color when button is clicked
+var buttonArray = document.querySelectorAll('.btn');
+
+for(var i=0; i<buttonArray.length; i++){
+  buttonArray[i].addEventListener("click", fire);
+}
+function fire(e){
+  e.currentTarget.style.backgroundColor = "rgb("+rnd()+","+rnd()+","+rnd()+")";
+}
+//color randomizer 
+function rnd() {
+    return Math.floor(Math.random() * (255 + 1)) ;
+}
