@@ -2,7 +2,7 @@
 const topNav = document.querySelectorAll('.nav a');
 //1
 topNav[0].addEventListener('click', event => {
-    console.log(event)
+    alert('Why do you want to go home? Don\'t you want to have fun on the Fun Bus?!')
     event.stopPropagation()
 });
 //2
@@ -12,7 +12,7 @@ topNav[1].addEventListener('mouseover', event => {
 });
 //3
 topNav[2].addEventListener('keydown', event => {
-    console.log(event)
+    alert('Ouch! I jammed that key in a door the other day!!')
     event.stopPropagation()
 });
 //4
@@ -45,3 +45,32 @@ function fire(e){
 function rnd() {
     return Math.floor(Math.random() * (255 + 1)) ;
 }
+//8
+// nav color
+const paraL = document.querySelectorAll('.main-navigation');
+
+for (let i = 0; i < paraL.length; i++) {
+    paraL[i].addEventListener("mouseover", fire)
+}
+
+function fire(e){
+    e.currentTarget.style.backgroundColor = "rgb("+rnd()+","+rnd()+","+rnd()+")";
+  }
+  //color randomizer 
+  function rnd() {
+      return Math.floor(Math.random() * (255 + 1)) ;
+  }
+
+//9
+//bounce - animation end
+const logoheading = document.querySelector('.logo-heading');
+logoheading.addEventListener("mouseout", event => {
+    console.log(event)
+    TweenLite.to(logoheading, 2.5, { ease: Bounce.easeIn, y: -50 });
+})
+//10 bounce back in
+const imgL = document.querySelector('.intro img');
+imgL.addEventListener("mouseup", event => {
+    console.log(event)
+    TweenLite.to(logoheading, 2.5, { ease: Bounce.easeIn, y: 0 });
+})
