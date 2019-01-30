@@ -1,13 +1,18 @@
 
-/*
+
 const blocksArr = Array.from(document.querySelectorAll('.block'));
 
 for (let i = 0; i < blocksArr.length; i++) {
     blocksArr[i].addEventListener("click", event => {
-        blocksArr.unshift(blocksArr[i])
+        TweenLite.to(blocksArr[i], 2.5, { ease: Power2.easeOut, x: 200 });
+        TweenLite.to(blocksArr[i], 2.5, { ease: Power2.easeOut, y: -500 });
+        TweenLite.to(blocksArr[i], 2.5, { ease: Power2.easeOut, x: 500 });
+        console.log(event)
     })
     }
-*/
+
+
+/*
 let nodesArr = [].slice.call(document.querySelectorAll(".block"));
 
 for (let i = 0; i < nodesArr.length; i++) {
@@ -17,7 +22,7 @@ for (let i = 0; i < nodesArr.length; i++) {
     })
     }
 
-
+*/
 
 
 /*
